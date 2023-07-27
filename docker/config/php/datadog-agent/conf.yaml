@@ -1,0 +1,15 @@
+### All options defined here are available to all instances.
+##init_config:
+#
+#instances:
+#  -
+#
+#logs:
+#  - type: file
+#    path: /var/www/webprod.com//var/log/*.log
+#    service: teamwork-api
+#    source: php
+#    log_processing_rules:
+#      - type: multi_line
+#        name: new_log_start_with_id
+#        pattern: \d{2,8}
