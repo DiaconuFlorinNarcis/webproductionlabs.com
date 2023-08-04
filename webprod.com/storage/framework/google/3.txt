@@ -1,0 +1,42 @@
+RI
+44
+07.10.1
+ROUMANIE
+ROMÁNIA
+ROMANIA
+Monde
+CARTE
+CARTE DE IDENTITATE
+D'IDENTITE
+IDENTITY
+SERIA TR NR 409131
+CARD
+CNP 1891113341181
+T525M
+Nume/Nom/Last name
+ISPILANTE
+Prenume/Prenom/First name
+SENTIMENT BRUSLI
+Cetatenie/Nationalite/Nationality
+Sex/Sexe/Sex
+Româna / ROU
+M
+0
+Loc nastere/Lieu de naissance/Place of birth
+Orş. Videle Jud. Teleorman
+YA
+Domiciliu/Adresse/Address
+Ors. Videle Jud. Teleorman
+695
+Şos. Giurgiului nr.1
+TR
+Émisà de/Delivree par/Issued by
+Valabilitate/Validite/Validity
+SPCLEP Videle
+04.11.11-13.11.2018
+IDROUISPILANTE << SENTIMENT<BRUSLI <<<<
+TR409131<0ROU8911137M181113513411813
+.<<<<<<<<<<<<
+.06F150516623
+.J2.05-16.05.2015
+sate/Validite/Validity

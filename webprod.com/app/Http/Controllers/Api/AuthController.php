@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\ValidationException;
 
 class AuthController extends Controller
 {
@@ -17,20 +18,26 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
-        $request->validate([
-            'email' => 'required|string|email',
-            'password' => 'required|string',
-        ]);
-        $credentials = $request->only('email', 'password');
-        $token = Auth::attempt($credentials);
+        try {
+            $request->validate([
+                'email' => 'required|string|email',
+                'password' => 'required|string',
+            ]);
 
-        if (!$token) {
-            return response()->json([
-                'message' => 'Unauthorized',
-            ], 401);
+            $credentials = $request->only('email', 'password');
+            $token = Auth::attempt($credentials);
+
+            if (!$token) {
+                return response()->json([
+                    'message' => 'Unauthorized',
+                ], 401);
+            }
+
+            $user = Auth::user();
+        } catch (\Exception $exception) {
+            return response()->json($exception->getMessage());
         }
 
-        $user = Auth::user();
         return response()->json([
             'user' => $user,
             'authorization' => [
@@ -42,17 +49,24 @@ class AuthController extends Controller
 
     public function register(Request $request)
     {
+        try {
+            $request->validate([
+                'name' => 'required|string|max:255',
+                'email' => 'required|string|email|max:255',
+                'password' => 'required|string|min:6',
+            ]);
+        } catch (ValidationException $exception) {
+            return response()->json($exception->getMessage());
+        }
 
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6',
-        ]);
 
         $user = User::create([
             'name' => $request->name,
+            'prenume' => $request->prenume,
             'email' => $request->email,
+            'telefon' => $request->telefon,
             'password' => Hash::make($request->password),
+            'email_verified' => $request->email,
         ]);
 
         return response()->json([

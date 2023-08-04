@@ -53,6 +53,8 @@ class User extends Authenticatable implements JWTSubject
         'password',
     ];
 
+    protected $guarded = ['cnp'];
+
     /**
      * The attributes that should be hidden for serialization.
      *

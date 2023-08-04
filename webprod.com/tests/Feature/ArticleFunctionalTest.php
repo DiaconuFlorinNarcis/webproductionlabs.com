@@ -21,13 +21,14 @@ class ArticleFunctionalTest extends TestCase
     {
         return [
             ['{
-                "name": "florin3",
+                "name": "ionut",
                 "password": "123456",
-                "email": "florin3@webprod.com"
+                "email": "ionut@webprod.com"
             }'],
             ['{
-                "name": "admin",
-                "email": "admin@webprod.com"
+                "name": "admin-master",
+                "password": "123456",
+                "email": "admin-master@webprod.com"
             }'],
         ];
     }
